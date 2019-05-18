@@ -1,0 +1,17 @@
+parameters:
+    git_dir: .
+    bin_dir: bin
+    process_timeout: ~
+    tasks:
+        phpcsfixer2:
+            allow_risky: ~
+            cache_file: ~
+            config: .php_cs
+            rules: []
+            using_cache: ~
+            config_contains_finder: true
+            verbose: true
+            diff: false
+            triggered_by:
+                - php
+        phpstan: ~

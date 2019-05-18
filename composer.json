@@ -26,6 +26,12 @@
         "symfony/yaml": "4.2.*"
     },
     "require-dev": {
+        "deployer/deployer": "^6.4",
+        "deployer/recipes": "^6.2",
+        "doctrine/doctrine-fixtures-bundle": "^3.1",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpro/grumphp": "^0.15.2",
+        "phpstan/phpstan": "^0.11.6",
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
