@@ -1,4 +1,4 @@
-.PHONY: deploy fixtures help install test
+.PHONY: deploy fixtures help install jwt-keys test
 .PHONY: build down reload up
 .DEFAULT_GOAL= help
 
@@ -32,6 +32,10 @@ install: vendor ## Install the project
 	php $(CONSOLE) doctrine:fixtures:load --no-interaction
 	mkdir var/data
 	touch var/data/data.sqlite
+
+jwt-keys: ## Generate the jwt keys
+	openssl genrsa -out config/jwt/private.pem 4096
+	openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 
 test: vendor ## Launch tests
 	php $(PHPUNIT) --stop-on-failure

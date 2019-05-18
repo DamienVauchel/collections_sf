@@ -12,7 +12,9 @@ set('repository', 'git@github.com:DamienVauchel/collections_sf.git');
 set('git_tty', true);
 
 add('shared_files', []);
-add('shared_dirs', []);
+add('shared_dirs', [
+    'config/jwt',
+]);
 
 add('writable_dirs', []);
 set('allow_anonymous_stats', false);
