@@ -26,9 +26,13 @@ Symfony 4.2 - webkit
 ## Libraries
 
 ## Symfony bundles
+* Apache pack
+* Web pack
 
 ## External Bundles
 * Doctrine
+* EasyAdmin
+* FOS User
 * Twig
 
 ## Dev bundles
@@ -94,6 +98,16 @@ Then, in this example, to use project's console:
 Type: 
 
     make install
+   
+## Commands
+### User creation
+Type:
+
+    make user-create
+    
+To promote a user to admin
+
+    php bin/console fos:user:promote username ROLE_ADMIN
 
 ## Use
 

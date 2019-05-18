@@ -1,4 +1,4 @@
-.PHONY: deploy help install test
+.PHONY: deploy fixtures help install test
 .PHONY: build down reload up
 .DEFAULT_GOAL= help
 
@@ -16,6 +16,12 @@ DOCKER_COMPOSE?= docker-compose
 #
 deploy: composer.lock ## Deploy dev
 	php $(DEPLOYER) deploy $(ENV) --branch=$(BRANCH) -v
+
+fixtures: ## Dump, recreate database and load fixtures
+	php $(CONSOLE) d:d:d --force
+	php $(CONSOLE) d:d:cre
+	php $(CONSOLE) d:s:u -f
+	php $(CONSOLE) d:f:l -n
 
 help: ## Help for make (you're in now)
 	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-10s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'

@@ -11,6 +11,14 @@ class DefaultController extends AbstractController
      */
     public function home()
     {
+        return $this->redirectToRoute('easyadmin');
+    }
+
+    /**
+     * @Route("/test", methods={"GET"}, name="test")
+     */
+    public function test()
+    {
         return $this->render('default/index.html.twig');
     }
 }
