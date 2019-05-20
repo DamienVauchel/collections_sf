@@ -4,6 +4,11 @@ easy_admin:
         display_name: true
         display_avatar: false
     entities:
+        Brand:
+            class: App\Entity\Brand
+            label: 'Brand'
+            list:
+                title: 'Brand listing'
         User:
             class: App\Entity\User
             label: 'User'
@@ -12,5 +17,7 @@ easy_admin:
     design:
         brand_color: '#6a1b9a'
         menu:
+            -   entity: Brand
+                icon: 'tag'
             -   entity: User
                 icon: 'user'
